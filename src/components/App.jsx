@@ -37,7 +37,7 @@ export const App = () => {
     if (contact === null) {
       return;
     }
-    console.log('qwewewq');
+
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   });
 
@@ -45,8 +45,6 @@ export const App = () => {
   const visibleContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(normalizeFilter)
   );
-
-  console.log(contacts);
 
   return (
     <Layout>
