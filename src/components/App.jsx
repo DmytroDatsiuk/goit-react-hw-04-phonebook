@@ -33,13 +33,8 @@ export const App = () => {
   };
 
   useEffect(() => {
-    const contact = localStorage.getItem('contacts');
-    if (contact === null) {
-      return;
-    }
-
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  });
+  }, [contacts]);
 
   const normalizeFilter = filter.toLowerCase();
   const visibleContacts = contacts.filter(contact =>
